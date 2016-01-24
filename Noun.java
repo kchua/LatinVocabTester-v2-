@@ -12,42 +12,22 @@ public class Noun {
     this.english = english;
   }
 
-  public String getLatin()
-  {
-    return latin;
-  }
-
-  public String getSingularGenitive()
-  {
-    return singularGenitive;
-  }
-
-  public String getGender()
-  {
-    return gender;
-  }
-
-  public String getEnglish()
-  {
-    return english;
-  }
-
   public String getattr(String aspect)
   {
     String desired = "";
     switch (aspect)
     {
       case "latin":
-        desired = getLatin();
+        desired = latin;
         break;
       case "singularGenitive":
-        desired = getSingularGenitive();
+        desired = singularGenitive;
         break;
       case "gender":
-        desired = getGender();
+        desired = gender;
         break;
       case "english":
-        desired = getEnglish();
+        desired = english;
         break;
     }
     return desired;
@@ -56,5 +36,10 @@ public class Noun {
   public boolean test(String aspect, String answer)
   {
     return getattr(aspect) == answer;
+  }
+
+  public String toString()
+  {
+    return latin + ", " + singularGenitive + " ("+ gender + ")  -  " + english;
   }
 }
