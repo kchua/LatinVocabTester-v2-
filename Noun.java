@@ -1,4 +1,4 @@
-public class Noun {
+public class Noun extends partsOfSpeech {
   private String latin;
   private String singularGenitive;
   private String gender;
