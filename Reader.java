@@ -33,7 +33,7 @@ public class Reader {
   // corresponds to the part of speech being defined.
   public static partsOfSpeech createPartOfSpeech(String type, String definition)
   {
-    partsOfSpeech word = new partsOfSpeech();
+    partsOfSpeech word = null;
     switch (type)
     {
       case "n.":
