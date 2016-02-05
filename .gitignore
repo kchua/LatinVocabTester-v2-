@@ -3,3 +3,11 @@
 *Test.java
 
 *.txt
+
+/JUNIT
+
+*.iml
+
+/out
+
+/.idea
