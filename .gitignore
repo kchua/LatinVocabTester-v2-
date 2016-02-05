@@ -1,5 +1,11 @@
 *.class
 
-*Test.java
-
 *.txt
+
+/JUNIT
+
+/.idea
+
+*.iml
+
+/out

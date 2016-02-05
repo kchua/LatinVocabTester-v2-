@@ -7,6 +7,8 @@ import java.io.FileNotFoundException;
 public class Reader {
   private static final String nounPattern =
      "(\\S*)\\s+(\\S*)\\s+(\\S*)\\s+'([\\S\\s]+)'";
+    private static final String verbPattern =
+            "(\\S*)\\s+(\\S*)\\s+(\\S*)\\s+(\\S*)\\s+'([\\S\\s]+)'";
   // Add other patterns here
 
   // Reads a file and returns an array of vocabulary words
@@ -37,9 +39,10 @@ public class Reader {
     switch (type)
     {
       case "n.":
-        word =  createNoun(definition);
+        word = createNoun(definition);
         break;
-      // Add other parts of speech as cases below as required.
+      case "v.":
+        word = createVerb(definition);
     }
     return word;
   }
@@ -52,4 +55,9 @@ public class Reader {
     m.find();
     return new Noun(m.group(1), m.group(2), m.group(3), m.group(4));
   }
+
+    public static Verb createVerb(String definition)
+    {
+        return null;
+    }
 }

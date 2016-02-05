@@ -2,22 +2,24 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Verb extends partsOfSpeech {
-    private String firstPersonPresent;
-    private String infinitive;
-    private String firstPersonPast;
-    private String participle;
+    public String firstPersonPresent;
+    public String infinitive;
+    public String firstPersonPast;
+    public String participle;
+    public String english;
 
     private static final Pattern firstConjugation = Pattern.compile("(.*)a-re$");
     private static final Pattern secondConjugation = Pattern.compile("(.*)e-re$");
     private static final Pattern thirdConjugation = Pattern.compile("(.*)ere$");
     private static final Pattern fourthConjugation = Pattern.compile("(.*)ire$");
 
-    public Verb(String firstPersonPresent, String infinitive, String firstPersonPast, String participle)
+    public Verb(String firstPersonPresent, String infinitive, String firstPersonPast, String participle, String english)
     {
         this.firstPersonPresent = firstPersonPresent;
         this.infinitive = infinitive;
         this.firstPersonPast = firstPersonPast;
         this.participle = participle;
+        this.english = english;
     }
 
     public String getattr(String aspect)
