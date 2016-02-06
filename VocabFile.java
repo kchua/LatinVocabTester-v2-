@@ -1,6 +1,6 @@
 public class VocabFile {
-    private Noun[] nounsList;
-    private Verb[] verbsList;
+    protected Noun[] nounsList;
+    protected Verb[] verbsList;
     // Add other parts of speech
 
     public VocabFile(String fileName)
@@ -10,16 +10,35 @@ public class VocabFile {
 
     public static int count(partsOfSpeech[] vocabArray, String speechPart)
     {
-        return 0;
+        int count = 0;
+        for (int i = 0; i < vocabArray.length; i++)
+        {
+            if (speechPart.equals(identify(vocabArray[i])))
+            {
+                count++;
+            }
+        }
+        return count;
     }
 
-    public String sort(partsOfSpeech item)
+    public static String identify(partsOfSpeech item)
     {
+        if (item instanceof Noun)
+        {
+            return "noun";
+        }
         return null;
     }
 
     public partsOfSpeech[] getattr(String array)
     {
-        return null;
+        partsOfSpeech[] desired = null;
+        switch (array)
+        {
+            case "nouns":
+                desired = nounsList;
+                break;
+        }
+        return desired;
     }
 }
