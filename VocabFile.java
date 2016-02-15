@@ -5,7 +5,22 @@ public class VocabFile {
 
     public VocabFile(String fileName)
     {
+        partsOfSpeech[] temp = Reader.readFile(fileName);
+        nounsList = (Noun[]) filter(temp, "noun");
+    }
 
+    public static partsOfSpeech[] filter(partsOfSpeech[] vocabArray, String speechPart)
+    {
+        partsOfSpeech[] speechPartArray = new Noun[count(vocabArray, speechPart)];
+        int ind = 0;
+        for (int i = 0; i < vocabArray.length; i++)
+        {
+            if (speechPart.equals(identify(vocabArray[i])))
+            {
+                speechPartArray[ind++] = vocabArray[i];
+            }
+        }
+        return speechPartArray;
     }
 
     public static int count(partsOfSpeech[] vocabArray, String speechPart)
